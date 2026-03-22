@@ -3,115 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4bb.png">
-    <title>Kuba Trojak | O mnie</title>
+    <title>KubaTrojak.pl</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-
-        body {
-            background-color: #2c2c2c;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .card {
-            max-width: 450px;
-            padding: 40px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 5px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .location {
-            color: #888888;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .bio {
-            font-size: 1.1rem;
-            color: #cccccc;
-            margin-bottom: 35px;
-        }
-
-        .bio b {
-            color: #ffffff;
-        }
-
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .btn {
-            display: block;
-            padding: 14px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .btn-primary {
-            background-color: #ffffff;
-            color: #2c2c2c;
-        }
-
-        .btn-primary:hover {
-            background-color: #e0e0e0;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: #ffffff;
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(255,255,255,0.05);
-            border-color: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
-
-        footer {
-            margin-top: 50px;
-            font-size: 0.8rem;
-            color: #555555;
-        }
+        body { background-color: #2c2c2c; color: #ffffff; font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .card { max-width: 450px; padding: 40px; text-align: center; }
+        h1 { font-size: 2.8rem; margin-bottom: 30px; font-weight: 800; letter-spacing: -1px; }
+        .button-group { display: flex; flex-direction: column; gap: 12px; }
+        .btn { display: block; padding: 14px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; border: 1px solid rgba(255,255,255,0.1); }
+        .btn-primary { background-color: #ffffff; color: #2c2c2c; }
+        .btn-primary:hover { background-color: #e0e0e0; transform: translateY(-2px); }
+        footer { margin-top: 50px; font-size: 0.8rem; color: #555555; }
     </style>
 </head>
 <body>
-
     <div class="card">
-        <h1>Kuba Trojak</h1>
-        <div class="location">📍 Pomorskie, Powiat Chojnicki</div>
-        
-        <p class="bio">
-            Interesuję się informatyką, w tym <b>komputerami, serwerami </b>oraz <b>architekturą sieciową</b>. Buduję własne rozwiązania i dbam o porządek w cyfrowym świecie.
-        </p>
-        
+        <h1>KubaTrojak.pl</h1>
         <div class="button-group">
-            <a href="mailto:kontakt@kubatrojak.pl" class="btn btn-primary">Napisz wiadomość</a>
-            <a href="https://github.com/Butelkapro" id="github-link" target="_blank" class="btn btn-secondary">Projekty (GitHub)</a>
+            <a href="/about/" class="btn btn-primary">O mnie</a>
+            <a href="/contact/" class="btn btn-primary">Kontakt i Media</a>
         </div>
-
         <footer>&copy; 2026 kubatrojak.pl</footer>
     </div>
-
 </body>
 </html>

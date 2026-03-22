@@ -26,7 +26,18 @@
             <a href="https://github.com/Butelkapro" target="_blank" class="btn btn-secondary">Projekty (GitHub)</a>
         </div>
         <a href="/" class="back">← Wróć do strony głównej</a>
-        <footer>&copy; 2026 kubatrojak.pl</footer>
+        <footer id="footer-date">&copy; 2026 kubatrojak.pl</footer>
     </div>
+
+    <script>
+        const startYear = 2026;
+        const currentYear = new Date().getFullYear();
+        const footer = document.getElementById('footer-date');
+        if (currentYear > startYear) {
+            footer.innerHTML = `&copy; ${startYear}-${currentYear} kubatrojak.pl`;
+        } else {
+            footer.innerHTML = `&copy; ${startYear} kubatrojak.pl`;
+        }
+    </script>
 </body>
 </html>

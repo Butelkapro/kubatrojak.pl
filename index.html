@@ -23,7 +23,18 @@
             <a href="/about/" class="btn btn-primary">O mnie</a>
             <a href="/contact/" class="btn btn-primary">Kontakt i Media</a>
         </div>
-        <footer>&copy; 2026 kubatrojak.pl</footer>
+        <footer id="footer-date">&copy; 2026 kubatrojak.pl</footer>
     </div>
+
+    <script>
+        const startYear = 2026;
+        const currentYear = new Date().getFullYear();
+        const footer = document.getElementById('footer-date');
+        if (currentYear > startYear) {
+            footer.innerHTML = `&copy; ${startYear}-${currentYear} kubatrojak.pl`;
+        } else {
+            footer.innerHTML = `&copy; ${startYear} kubatrojak.pl`;
+        }
+    </script>
 </body>
 </html>

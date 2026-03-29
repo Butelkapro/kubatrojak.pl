@@ -99,7 +99,7 @@
         function renderResults(list) {
             resultsContainer.innerHTML = list.map(i => `
                 <a href="${i.url}" class="btn btn-primary">
-                    <span class="result-name">${i.name}</span>
+                    <span class="result-name">(${i.id}) ${i.name}</span>
                     <span class="result-desc">${i.description}</span>
                 </a>
             `).join('');

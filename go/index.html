@@ -65,7 +65,7 @@
 
         function handleInitialRouting() {
             const hash = window.location.hash.substring(1).toLowerCase();
-            const query = window.location.search.substring(1).toLowerCase();
+            const queryRaw = window.location.search.substring(1);
 
             // Obsługa Hash # (Priorytet ID, potem Name)
             if (hash) {
@@ -74,16 +74,10 @@
             }
 
             // Obsługa Query ?
-            if (query) {
-                const phrase = decodeURIComponent(query);
-                const exact = registry.find(i => i.id === phrase) || registry.find(i => i.name === phrase);
-                
-                if (exact) {
-                    window.location.replace(exact.url);
-                } else {
-                    searchInput.value = phrase;
-                    performSearch(phrase);
-                }
+            if (queryRaw) {
+                const phrase = decodeURIComponent(queryRaw);
+                searchInput.value = phrase;
+                performSearch(phrase);
             }
         }
 

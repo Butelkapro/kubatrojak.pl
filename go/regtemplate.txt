@@ -1,0 +1,20 @@
+// Skopiuj ten obiekt do pliku registry.json, aby dodać nowe przekierowanie.
+// Pamiętaj o dodaniu przecinka (,) po poprzednim obiekcie, jeśli nie jest to ostatni element w tablicy.
+
+Szablon:
+    {
+        "id": "",
+        "name": "",
+        "keywords": [],
+        "description": "",
+        "url": ""
+    }
+
+Użycie:
+{
+    "id": "", // Unikalny identyfikator numeryczny lub alfanumeryczny (np. "4", "blog")
+    "name": "", // Unikalna nazwa słowna (np. "blog", "portfolio-v2")
+    "keywords": [], // Tablica słów kluczowych, które pomogą w wyszukiwaniu (np. ["wpisy", "artykuły"])
+    "description": "", // Krótki opis celu przekierowania
+    "url": "" // Docelowy adres URL (np. "/blog/", "https://external.com/page")
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/globalfiles/page_icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/globalfiles/page_icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/globalfiles/page_icon/favicon-16x16.png">
+    <link rel="manifest" href="/globalfiles/page_icon/site.webmanifest">
+    <title>Przekierowania | Kuba Trojak</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        body { background-color: #2c2c2c; color: #ffffff; font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .card { width: 100%; max-width: 450px; padding: 40px; text-align: center; box-sizing: border-box; }
+        h1 { font-size: 2.8rem; margin-bottom: 30px; font-weight: 800; letter-spacing: -1px; }
+        .search-input { 
+            width: 100%; 
+            padding: 14px 20px; 
+            border-radius: 10px; 
+            background: #3d3d3d; 
+            border: 1px solid rgba(255,255,255,0.1); 
+            color: white; 
+            font-size: 1rem; 
+            box-sizing: border-box; 
+            margin-bottom: 30px; 
+            outline: none; 
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.2s;
+        }
+        .search-input:focus { border-color: rgba(255,255,255,0.4); }
+        .button-group { display: flex; flex-direction: column; gap: 12px; }
+        .btn { display: block; padding: 14px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; border: 1px solid rgba(255,255,255,0.1); text-align: left; }
+        .btn-primary { background-color: #ffffff; color: #2c2c2c; }
+        .btn-primary:hover { background-color: #e0e0e0; transform: translateY(-2px); }
+        .result-name { font-weight: 800; display: block; }
+        .result-desc { font-size: 0.85rem; opacity: 0.7; font-weight: 400; margin-top: 4px; }
+        .back { color: #888888; text-decoration: none; font-size: 0.9rem; transition: 0.2s; margin-top: 30px; display: inline-block; }
+        .back:hover { color: #ffffff; }
+        footer { margin-top: 50px; font-size: 0.8rem; color: #555555; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Przekierowania</h1>
+        <input type="text" id="search" class="search-input" placeholder="Podaj słowa klucze, nazwę lub ID..." autocomplete="off">
+        <div id="results" class="button-group"></div>
+        <a href="/" class="back">← Wróć do strony głównej</a>
+        <footer id="footer-date">&copy; 2026 kubatrojak.pl</footer>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const resultsContainer = document.getElementById('results');
+        let registry = [];
+
+        async function init() {
+            try {
+                const response = await fetch('registry.json');
+                registry = await response.json();
+                handleInitialRouting();
+            } catch (e) {
+                console.error("Błąd ładowania rejestru:", e);
+            }
+        }
+
+        function handleInitialRouting() {
+            const hash = window.location.hash.substring(1).toLowerCase();
+            const query = window.location.search.substring(1).toLowerCase();
+
+            // Obsługa Hash # (Priorytet ID, potem Name)
+            if (hash) {
+                const target = registry.find(i => i.id === hash) || registry.find(i => i.name === hash);
+                if (target) return window.location.replace(target.url);
+            }
+
+            // Obsługa Query ?
+            if (query) {
+                const phrase = decodeURIComponent(query);
+                const exact = registry.find(i => i.id === phrase) || registry.find(i => i.name === phrase);
+                
+                if (exact) {
+                    window.location.replace(exact.url);
+                } else {
+                    searchInput.value = phrase;
+                    performSearch(phrase);
+                }
+            }
+        }
+
+        function performSearch(term) {
+            const cleanTerm = term.toLowerCase().trim();
+            if (!cleanTerm) {
+                resultsContainer.innerHTML = '';
+                return;
+            }
+            const filtered = registry.filter(i => 
+                i.id.toLowerCase().includes(cleanTerm) ||
+                i.name.toLowerCase().includes(cleanTerm) ||
+                i.description.toLowerCase().includes(cleanTerm) ||
+                i.keywords.some(k => k.toLowerCase().includes(cleanTerm))
+            );
+            renderResults(filtered);
+        }
+
+        function renderResults(list) {
+            resultsContainer.innerHTML = list.map(i => `
+                <a href="${i.url}" class="btn btn-primary">
+                    <span class="result-name">${i.name}</span>
+                    <span class="result-desc">${i.description}</span>
+                </a>
+            `).join('');
+        }
+
+        searchInput.oninput = (e) => performSearch(e.target.value);
+
+        // Footer date script
+        const startYear = 2026;
+        const currentYear = new Date().getFullYear();
+        const footer = document.getElementById('footer-date');
+        footer.innerHTML = currentYear > startYear ? `&copy; ${startYear}-${currentYear} kubatrojak.pl` : `&copy; ${startYear} kubatrojak.pl`;
+
+        init();
+    </script>
+</body>
+</html>

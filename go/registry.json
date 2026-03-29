@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "name": "about",
+        "keywords": ["o mnie", "kim jestem", "bio"],
+        "description": "Dowiedz się więcej o mnie",
+        "url": "/about/"
+    },
+    {
+        "id": "2",
+        "name": "contact",
+        "keywords": ["kontakt", "media", "social", "mail"],
+        "description": "Skontaktuj się ze mną lub znajdź mnie w sieci",
+        "url": "/contact/"
+    },
+    {
+        "id": "3",
+        "name": "github",
+        "keywords": ["kod", "projekty", "programowanie"],
+        "description": "Mój profil na platformie GitHub",
+        "url": "https://github.com/Butelkapro"
+    }
+]

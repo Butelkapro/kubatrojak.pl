@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/globalfiles/page_icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/globalfiles/page_icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/globalfiles/page_icon/favicon-16x16.png">
+    <link rel="manifest" href="/globalfiles/page_icon/site.webmanifest">
+    <title>O stronie | Kuba Trojak</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        body { background-color: #2c2c2c; color: #ffffff; font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .card { max-width: 600px; padding: 40px; text-align: left; }
+        h1 { font-size: 2.8rem; margin-bottom: 25px; font-weight: 800; letter-spacing: -1px; text-align: center; }
+        h2 { font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 800; letter-spacing: -0.5px; }
+        p { line-height: 1.6; color: #cccccc; margin-bottom: 15px; }
+        .button-group { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
+        .btn { display: block; padding: 14px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
+        .btn-primary { background-color: #ffffff; color: #2c2c2c; }
+        .btn-primary:hover { transform: translateY(-2px); background-color: rgba(255,255,255,0.9); color: #2c2c2c; }
+        .back { margin-top: 40px; display: block; color: #888888; text-decoration: none; font-size: 0.9rem; text-align: center; }
+        footer { margin-top: 50px; font-size: 0.8rem; color: #555555; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>O stronie</h1>
+        <div class="content">
+            <p>
+                Ostatnia aktualizacja strony: 30 marca 2026
+            </p>
+            <p>
+                Witaj! Ta strona to moja cyfrowa wizytówka i miejsce, gdzie dokumentuję swoje projekty oraz osiągnięcia. 
+            </p>
+            <p>
+                Od strony technicznej, witryna jest rozwijana jako projekt <strong>Open Source</strong> przy użyciu nowoczesnych narzędzi programistycznych. Kod tworzę w edytorze <strong>Visual Studio Code</strong>, a do zarządzania wersjami i publikacji wykorzystuję <strong>GitHub Desktop</strong>. W procesie optymalizacji i projektowania rozwiązań wspieram się sztuczną inteligencją <strong>Gemini</strong>, co pozwala mi na szybkie wdrażanie nowych funkcjonalności i dbanie o czystość kodu. Całość hostowana jest na platformie <strong>GitHub Pages</strong>, co zapewnia szybkość i niezawodność działania.
+            </p>
+        </div>
+
+        <h2>Polityka prywatności</h2>
+        <div class="content">
+           <p>
+                Twoja prywatność jest dla mnie ważna. Niniejsza strona ma charakter statyczny i <strong>nie zbiera, nie przechowuje ani nie przetwarza danych osobowych</strong> użytkowników w sposób aktywny.
+            </p>
+            <p>
+                Informuję jednak, że strona jest hostowana przy użyciu usługi <strong>GitHub Pages</strong>. Dostawca hostingu (GitHub, Inc.) może automatycznie gromadzić podstawowe dane techniczne (np. adres IP, rodzaj przeglądarki). Szczegółowe informacje na ten temat znajdziesz w <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" style="color: #ffffff; text-decoration: underline;">Oświadczeniu o prywatności GitHub</a>. Jako właściciel strony nie mam wpływu na te procesy i nie ponoszę odpowiedzialności za działania dostawcy usług.
+            </p>
+        </div>
+
+        <a href="/" class="back">← Wróć do strony głównej</a>
+        <footer id="footer-date">&copy; 2026 <a href="https://kubatrojak.pl" style="color: inherit; text-decoration: none;">kubatrojak.pl</a></footer>
+    </div>
+
+    <script>
+        const startYear = 2026;
+        const currentYear = new Date().getFullYear();
+        const footer = document.getElementById('footer-date');
+        const displayYear = currentYear > startYear ? `${startYear}-${currentYear}` : startYear;
+        footer.innerHTML = `&copy; ${displayYear} <a href="https://kubatrojak.pl" style="color: inherit; text-decoration: none;">kubatrojak.pl</a>`;
+    </script>
+</body>
+</html>

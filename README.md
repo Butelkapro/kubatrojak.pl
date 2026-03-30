@@ -11,7 +11,7 @@ Projekt jest rozwijany w podejściu **AI-assisted development**, co pozwala na s
 * **AI Support:** Google Gemini
 * **Hosting:** [GitHub Pages](https://pages.github.com/)
 
-## 📁 Struktura repozytorium
+## 📁 Struktura strony
 * `/about/` – Informacje o mnie
 * `/aboutsite/` – Szczegóły techniczne strony i polityka prywatności
 * `/contact/` – Dane kontaktowe i media społecznościowe

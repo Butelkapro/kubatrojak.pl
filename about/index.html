@@ -39,18 +39,15 @@
             <a href="https://kubatrojak.pl/go?InstaLogik-2026" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: underline;">Zobacz zaświadczenie lub dyplom</a>
         </p>
         <a href="/" class="back">← Wróć do strony głównej</a>
-        <footer id="footer-date">&copy; 2026 kubatrojak.pl</footer>
+        <footer id="footer-date">&copy; 2026 <a href="https://kubatrojak.pl" style="color: inherit; text-decoration: none;">kubatrojak.pl</a> | <a href="/aboutsite/" style="color: inherit; text-decoration: none;">O stronie</a></footer>
     </div>
 
     <script>
         const startYear = 2026;
         const currentYear = new Date().getFullYear();
         const footer = document.getElementById('footer-date');
-        if (currentYear > startYear) {
-            footer.innerHTML = `&copy; ${startYear}-${currentYear} kubatrojak.pl`;
-        } else {
-            footer.innerHTML = `&copy; ${startYear} kubatrojak.pl`;
-        }
+        const displayYear = currentYear > startYear ? `${startYear}-${currentYear}` : startYear;
+        footer.innerHTML = `&copy; ${displayYear} <a href="https://kubatrojak.pl" style="color: inherit; text-decoration: none;">kubatrojak.pl</a> | <a href="/aboutsite/" style="color: inherit; text-decoration: none;">O stronie</a>`;
     </script>
 </body>
 </html>

@@ -7,7 +7,7 @@
     <meta name="description" content="Strona z informacjami o mnie i moich osiągnięciach.">
     <meta property="og:title" content="O mnie | Kuba Trojak">
     <meta property="og:description" content="Strona z informacjami o mnie i moich osiągnięciach.">
-    <meta property="og:image" content="https://kubatrojak.pl/globalfiles/page_icon/apple-touch-icon.png">
+    <meta property="og:image" content="https://kubatrojak.pl/globalfiles/page_icon/android-chrome-512x512.png">
     <meta property="og:url" content="https://kubatrojak.pl/about/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image"> 
@@ -27,6 +27,10 @@
         .location { color: #888888; font-size: 0.9rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
         .bio { font-size: 1.1rem; color: #cccccc; margin-bottom: 35px; }
         .bio b { color: #ffffff; }
+        .button-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 35px; }
+        .btn { display: block; padding: 14px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; border: 1px solid rgba(255,255,255,0.1); }
+        .btn-primary { background-color: #ffffff; color: #2c2c2c; }
+        .btn-primary:hover { background-color: #e0e0e0; transform: translateY(-2px); }
         .back { color: #888888; text-decoration: none; font-size: 0.9rem; transition: 0.2s; }
         .back:hover { color: #ffffff; }
         footer { margin-top: 50px; font-size: 0.8rem; color: #555555; }
@@ -35,18 +39,15 @@
 <body>
     <div class="card">
         <h1>O mnie</h1>
-        <img src="foto.jpg" alt="Kuba Trojak" class="profile-img">
+        <img src="foto.jpg" alt="Zdjęcie Kuby Trojaka" class="profile-img">
         <div class="location">📍 Pomorskie, Powiat Chojnicki</div>
         <p class="bio">
             Interesuję się informatyką, w tym <b>komputerami, serwerami</b> oraz <b>architekturą sieciową</b>. Buduję własne rozwiązania i dbam o porządek w cyfrowym świecie.
         </p>
-        <h2> Osiągnięcia </h2>
-        <p class="bio">
-            <b>26.03.2026</b> <br>
-            <b>Laureat II miejsca</b> w kategorii klas 8 w VII edycji trzyetapowego ogólnopolskiego konkursu matematyczno-informatycznego <br> 
-            <b>InstaLogik 2025/2026</b>. <br>
-            <a href="https://kubatrojak.pl/go?InstaLogik-2026" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: underline;">Zobacz zaświadczenie lub dyplom</a>
-        </p>
+        <div class="button-group">
+            <a href="/about/setup/" class="btn btn-primary">Mój setup</a>
+            <a href="/about/achievements/" class="btn btn-primary">Moje osiągnięcia</a>
+        </div>
         <a href="/" class="back">← Wróć do strony głównej</a>
         <footer id="footer-date">&copy; 2026 <a href="https://kubatrojak.pl" style="color: inherit; text-decoration: none;">kubatrojak.pl</a> | <a href="/aboutsite/" style="color: inherit; text-decoration: none;">O stronie</a></footer>
     </div>
